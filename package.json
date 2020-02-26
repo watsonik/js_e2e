@@ -1,0 +1,20 @@
+{
+  "name": "js_e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "webdriver-manager update --versions.standalone=3.4.0 --versions.chrome=80.0.3987.106 --gecko=false",
+    "test": "protractor ./test/config/protractor.config.js --disableChecks"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fs-extra": "^8.1.0",
+    "mocha": "^6.2.0",
+    "protractor": "^5.4.2",
+    "winston": "^3.2.1",
+    "yargs": "^14.0.0"
+  }
+}
