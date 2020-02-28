@@ -1,4 +1,4 @@
-const logger = require("../../../config/logger.config");
+const logger = require("../../config/logger.config");
 const Element = require("../base_elements/base_element");
 const Collection = require("../base_elements/base_collection");
 

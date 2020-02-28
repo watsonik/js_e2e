@@ -1,4 +1,5 @@
-const logger = require('../../../config/logger.config');
+const logger = require('../../config/logger.config');
+const EC = protractor.ExpectedConditions;
 
 class Collection {
     constructor(elementName, selector) {
@@ -7,7 +8,7 @@ class Collection {
     };
     async getCount() {
         const collectionCount = await this.collection.count();
-        logger.info(`Count of "${this.elementName}" is "${collectionCount}"`); 
+        logger.info(`Count of "${this.elementName}" is "${collectionCount}"`);
         return collectionCount;
     };
     async getTexts() {
@@ -23,6 +24,10 @@ class Collection {
         }
         logger.info(`Clicking "${textToClick}" text in "${this.elementName}"`);
         return this.collection.get(elementToClickIndex).click();
+    };
+
+    async waitForPresence() {
+        return browser.wait(EC.presenceOf(this.collection.first()), 10_000);
     };
 };
 
